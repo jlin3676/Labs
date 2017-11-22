@@ -1,12 +1,19 @@
 package lab3_2;
-
+import java.util.Arrays;
+/**
+ * 
+ * @author Jacky Lin, Brandon Channer
+ *
+ */
 public class ArrayMethods2 {
 	public static void main(String [] args)
 	{
 		String[] test1 = {"a", "b", "c"};
 		String[] test2 = {"f","g","z"};
-		String[] meme = merge(test1, test2);
+		String [] test3 = {"a", "b", "c","l","z","m","k",};
+		String[] meme = merge(test2, test1);
 		printArray(meme);
+		printArray(mergeSort(test3));
 	}
 
 	public static String[] merge(String[] list1, String[] list2) {
@@ -45,6 +52,33 @@ public class ArrayMethods2 {
 			}
 		return result;
 	}
+	
+	public static String [] mergeSort(String [] list) {
+			if(list.length==1) {
+				return list;
+			}
+			else {
+				String[] arr1 = Arrays.copyOfRange(list, 0, list.length/2);
+				String[] arr2 = Arrays.copyOfRange(list, list.length/2, list.length);
+				return merge(mergeSort(arr1), mergeSort(arr2));
+				
+			}
+	}
+	
+	public static int partition(int[] list)
+	{
+		int pivot = list[0];
+		int counter = 0;
+		for(int i = 1; i < list.length; i++)
+		{
+			if(list[i] <= pivot)
+			{
+				counter++;
+			}
+		}
+		return counter;
+	}
+	
 	public static void printArray(String[] arr) {
 		for(int i = 0; i < arr.length; i++) {
 			System.out.print("[" + arr[i] + "] ");
