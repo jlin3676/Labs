@@ -5,7 +5,7 @@ public class ArrayMethods3 {
 	public static void main(String[]args) {
 		String [] list1 = {"a","c","d","b","k","p","e","b"};
 		int [] list2 = {1,3,4,2,6,5,9,7,8};
-		double [] list3 = {3.14,6.89,13.37,4.20};
+		double [] list3 = {3.14,6.89,13.37,4.20,3.14,6.89};
 		bubbleSort(list1);
 		insertionSort(list2);
 		selectionSort(list3);
