@@ -1,7 +1,7 @@
 package lab3_4;
 
 public class ArrayMethods4 {
-
+//
 	public static void main(String[]args) {
 		int[] list = {27,3,5,2,6,4,7};
 		System.out.println(partition(list,0,list.length));
