@@ -20,11 +20,14 @@ public class Deck {
 	}
 
 	public boolean isEmpty() {
-		return true;
+		if(unDealt.size() == 0) {
+			return true;
+		}
+		return false;
 	}
 	
 	public int size() {
-		return 1;
+		return unDealt.size();
 	}
 	
 	public void shuffle() {
