@@ -30,7 +30,25 @@ public class Deck {
 		return unDealt.size();
 	}
 	
+	public Card deal() {
+		if(unDealt.size() > 0) {
+			int n = (int)(Math.random() * unDealt.size());
+			Card card = unDealt.get(n);
+			Dealt.add(card);
+			unDealt.remove(n);
+			return card;
+		}
+		return null;
+	}
+	
 	public void shuffle() {
-		
+		unDealt.addAll(Dealt);
+		Dealt.clear();
+		for(int k = 51; k < 1; k--) {
+			int r = (int)(Math.random() * k+1);
+			Card card = Dealt.get(k);
+			unDealt.set(k, unDealt.get(r));
+			unDealt.set(r, card);
+		}
 	}
 }
