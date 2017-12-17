@@ -5,7 +5,7 @@ public class DeckTester {
 
 	public static void main(String[] args)
 	{
-		String[] rank = {"A", "B", "C"};
+		String[] rank = {"2","3","4","5","6","7","8","9","10","J","Q","K","Ace"};
 		String[] suit = {"heart", "spade", "club", "diamond"};
 		int[] pointValue = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 		Deck Deck = new Deck(rank, suit, pointValue);
@@ -20,7 +20,7 @@ public class DeckTester {
 		}
 		System.out.println(Deck.size());
 		
-		Deck.shuffle();
+		Deck.deal();
 		
 		for(int i = 0; i < Deck.size(); i++)
 		{
@@ -29,6 +29,8 @@ public class DeckTester {
 		System.out.println(Deck.size());
 		
 		System.out.println(Deck.isEmpty());
+		
+
 	}
 
 }
