@@ -3,8 +3,8 @@ import lab4_1.Card;
 import java.util.ArrayList;
 public class Deck {
 
-	private ArrayList<Card> unDealt;
-	private ArrayList<Card> Dealt;
+	private ArrayList<Card> unDealt = new ArrayList<Card>();
+	private ArrayList<Card> Dealt = new ArrayList<Card>();
 	
 	public Deck(String[]rank, String[]suit, int[] PointValue) {
 		ArrayList<Card> undealt = new ArrayList<Card>();
@@ -38,7 +38,9 @@ public class Deck {
 			unDealt.remove(n);
 			return card;
 		}
-		return null;
+		else {
+			return null;
+		}
 	}
 	
 	public void shuffle() {
@@ -50,5 +52,10 @@ public class Deck {
 			unDealt.set(k, unDealt.get(r));
 			unDealt.set(r, card);
 		}
+	}
+	
+	public Card getCard(int x)
+	{
+		return unDealt.get(x);
 	}
 }
