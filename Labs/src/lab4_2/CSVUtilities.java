@@ -12,8 +12,21 @@ import java.util.List;
 public class CSVUtilities {
 
 	private ArrayList<String> CSVData = new ArrayList<String>();
+	private int numColumns;
 	
 	public CSVUtilities(File csv) {
+		Path pathToFile = Paths.get(csv.getAbsolutePath());
+		try (BufferedReader br = Files.newBufferedReader(pathToFile, 
+				StandardCharsets.US_ASCII)){
+			String line = br.readLine();
+			while(line != null) {
+				line = br.readLine();
+				this.CSVData.add(line);
+			}
+		}		
+				catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
 		
 	}
 	
