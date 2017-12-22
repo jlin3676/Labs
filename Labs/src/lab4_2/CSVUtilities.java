@@ -16,15 +16,16 @@ public class CSVUtilities {
 	
 	public CSVUtilities(File csv) {
 		Path pathToFile = Paths.get(csv.getAbsolutePath());
-		try (BufferedReader br = Files.newBufferedReader(pathToFile, 
-				StandardCharsets.US_ASCII)){
+		try (BufferedReader br = Files.newBufferedReader(pathToFile,StandardCharsets.US_ASCII)){
 			String line = br.readLine();
 			while(line != null) {
+				this.CSVData.add(line);
 				line = br.readLine();
-				String[] data = line.split(",");
+				/*String[] data = line.split(",");
 				for(int i = 0; i < data.length; i++) {
 					this.CSVData.add(data[i]);
 				}
+				*/
 			}
 		}		
 				catch (IOException ioe) {
@@ -46,19 +47,40 @@ public class CSVUtilities {
 		return headers;
 	}
 	
-	public List<String> getData(int column){
+	public List<String> getDataString(int column){
 		ArrayList<String> data = new ArrayList<String>();
 		if(!CSVData.isEmpty() && column < numColumns) {
-			for(int i = )
+			for (String line : CSVData)
+			{
+				String[] split = line.split(",");
+				data.add(split[column]);
+			}
 		}
+		return data;
 	}
 	
-	public List<Integer> getData(int column){
-		
+	public List<Integer> getDataInt(int column){
+		ArrayList<Integer> data = new ArrayList<Integer>();
+		if(!CSVData.isEmpty() && column < numColumns) {
+			for (String line : CSVData)
+			{
+				String[] split = line.split(",");
+				data.add(Integer.parseInt(split[column]));
+			}
+		}
+		return data;
 	}
 	
-	public List<Double> getData(int column){
-		
+	public List<Double> getDataDouble(int column){
+		ArrayList<Double> data = new ArrayList<Double>();
+		if(!CSVData.isEmpty() && column < numColumns) {
+			for (String line : CSVData)
+			{
+				String[] split = line.split(",");
+				data.add(Double.parseDouble(split[column]));
+			}
+		}
+		return data;
 	}
 
 }
