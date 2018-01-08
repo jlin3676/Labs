@@ -10,7 +10,10 @@ import javafx.stage.Stage;
 public class MinecraftPvP_named_by_brandon extends Application {
 	
 	    public static void main(String[] args) {
-	        launch(args);
+	    	long startTime = System.currentTimeMillis();
+	    	while(startTime < 10000) {
+	    		launch(args);
+	    	}
 	    }
 	    
 	    int count = 0;
@@ -20,7 +23,7 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	        Button btn = new Button();
 	        btn.setText("Click as fast as you can!");
 	        btn.setOnAction(new EventHandler<ActionEvent>() {
-	 
+	        	
 	            @Override
 	            public void handle(ActionEvent event) {
 	            	count++;
