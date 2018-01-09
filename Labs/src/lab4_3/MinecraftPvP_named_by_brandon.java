@@ -11,9 +11,9 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	
 	    public static void main(String[] args) {
 	    	long startTime = System.currentTimeMillis();
-	    	while(startTime < 10000) {
+	    	//while(startTime < 10000) {
 	    		launch(args);
-	    	}
+	    	//}
 	    }
 	    
 	    int count = 0;
@@ -37,4 +37,20 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	        primaryStage.show();
 	    }
 	}
+/*
+	PrintWriter pw = null;\
+	try{
+		pw = new PrintWriter(new File("results.csv"));
+	}
+	catch(FileNotFoundException e){
+		System.err.println(e);
+	}
+	StringBuilder sb = new StringBuilder(); // whats a string builder
+	//hard coded example
+	sb.append();
+	sb.append();
+	sb.append();
+	pw.write(sb.toString());
+	pw.close();
+*/	
 
