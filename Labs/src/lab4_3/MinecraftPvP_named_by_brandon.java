@@ -1,4 +1,5 @@
 package lab4_3;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,20 +21,25 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	    @Override
 	    public void start(Stage primaryStage) {
 	        primaryStage.setTitle("MinecraftPvP simulator");
-	        Button btn = new Button();
-	        btn.setText("Click as fast as you can!");
-	        btn.setOnAction(new EventHandler<ActionEvent>() {
+	        Button btn = new Button("Click as fast as you can");
+	        btn.setOnAction(value ->{
+	        	count++;
+	        	btn.setText("" + count);
 	        	
-	            @Override
-	            public void handle(ActionEvent event) {
-	            	count++;
-	                System.out.println(count);
+	        	long timeStep = System.nanoTime() + 10000000000L;
+	        	new AnimationTimer() {
+	       
+	            public void handle(long now) {
+	               if(now > timeStep) {
+	            	   System.exit(1);
+	               }
 	            }
+	        	}.start();
 	        });
-	        
 	        StackPane root = new StackPane();
 	        root.getChildren().add(btn);
-	        primaryStage.setScene(new Scene(root, 300, 250));
+	        btn.setMaxSize(200, 200);
+	        primaryStage.setScene(new Scene(root, 500, 400));
 	        primaryStage.show();
 	    }
 	}
