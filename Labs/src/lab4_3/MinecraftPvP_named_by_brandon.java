@@ -42,19 +42,22 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	            }
 	        	}.start();
 	        });
+	        
+	        
+	        
 	        StackPane root = new StackPane();
 	        root.getChildren().add(btn);
 	        btn.setMaxSize(200, 200);
 	        primaryStage.setScene(new Scene(root, 500, 400));
 	        primaryStage.show();
-	        FileInputStream pic = new FileInputStream("New folder/maxresdefault.jpg");
+	        /*FileInputStream pic = new FileInputStream("New folder/maxresdefault.jpg");
 		       Image mine = new Image(pic);
 		       ImageView craft = new ImageView(mine);
 	       String image = Application.class.getResource("maxresdefault.jpg").toExternalForm();
 	        root.setStyle("-fx-background-image: url('" + image + "'); " +
 	                   "-fx-background-position: center center; " +
 	                   "-fx-background-repeat: stretch;");
-	       
+	       */
 	    }
 	}
 	
