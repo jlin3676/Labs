@@ -67,7 +67,7 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	        
 	        
             
-	        
+	         
 	        StackPane root = new StackPane();
 	        root.getChildren().add(btn);
 	        btn.setMaxSize(200, 200);
@@ -84,20 +84,4 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	    }
 	}
 	
-/*
-	PrintWriter pw = null;\
-	try{
-		pw = new PrintWriter(new File("results.csv"));
-	}
-	catch(FileNotFoundException e){
-		System.err.println(e);
-	}
-	StringBuilder sb = new StringBuilder(); // whats a string builder
-	//hard coded example
-	sb.append();
-	sb.append();
-	sb.append();
-	pw.write(sb.toString());
-	pw.close();
-*/	
 
