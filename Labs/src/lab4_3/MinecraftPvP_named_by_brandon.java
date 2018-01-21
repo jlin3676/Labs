@@ -1,5 +1,8 @@
 package lab4_3;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 import javafx.scene.image.Image;
 
@@ -41,9 +44,29 @@ public class MinecraftPvP_named_by_brandon extends Application {
 	               }
 	            }
 	        	}.start();
+	        	
+	        	PrintWriter pw = null;
+	            try
+	            {
+	            	pw = new PrintWriter(new File("results.csv"));
+	            }
+	            catch(FileNotFoundException e)
+	            {
+	            	e.printStackTrace();
+	            }
+	            StringBuilder sb = new StringBuilder();
+	            sb.append("Name, High Score\n");
+	            sb.append("player");
+	            sb.append(',');
+	            sb.append(count);
+	            sb.append('\n');
+	            
+	            pw.write(sb.toString());
+	            pw.close();
 	        });
 	        
 	        
+            
 	        
 	        StackPane root = new StackPane();
 	        root.getChildren().add(btn);
